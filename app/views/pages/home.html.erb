@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Enter in the sandbox</h1>
+
+<% if current_user %>
+  <%= link_to "Log out",  destroy_user_session_path, method: :delete, class: 'waves-effect waves-light btn-large' %>
+<% else %>
+  <%= link_to "Sign in", new_user_session_path, class: 'waves-effect waves-light btn-large' %>
+<% end %>
