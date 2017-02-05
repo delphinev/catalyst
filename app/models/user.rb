@@ -7,4 +7,6 @@ class User < ApplicationRecord
   dragonfly_accessor :avatar do
     default 'public/system/dragonfly/development/avatar.jpg'
   end
+
+  validates :username, presence: true, uniqueness: true
 end
