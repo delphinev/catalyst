@@ -1,3 +1,19 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users {
+  .card-image {
+    position: relative;
+
+    .material-icons {
+      position: absolute;
+      top: 40%;
+      left: 46%;
+      color: rgba(255, 255, 255, 0.4);
+      background: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      z-index: 9;
+    }
+  }
+}

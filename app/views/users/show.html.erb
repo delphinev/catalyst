@@ -1,15 +1,19 @@
-<div class="row">
+<div class="row users">
   <div class="col s12 m7">
     <div class="card big">
       <div class="card-image">
-        <img src="https://pbs.twimg.com/profile_images/465909400880701440/3JULwHa9.png">
+        <%= form_for(@user, url: registration_path(@user), remote: true, html: { method: :put}) do |f| %>
+          <i class="material-icons md-36 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Upload picture">publish</i>
+          <%= f.file_field :avatar, style: 'display: none', class: 'avatar-upload' %>
+        <% end %>
+        <%= image_tag current_user.avatar.thumb('500x250#').url, class: 'avatar' %>
         <span class="card-title"><%= current_user.username %></span>
       </div>
       <div class="card-content">
         <p><%= current_user.biography %></p>
       </div>
       <div class="card-action">
-        <a href="#">This is a link</a>
+        <%= link_to 'Edit profile', edit_user_registration_path %>
       </div>
     </div>
   </div>
