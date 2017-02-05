@@ -36,6 +36,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'better_errors'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
@@ -43,12 +44,15 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry'
-  gem 'better_errors'
   gem 'letter_opener'
+  gem 'bullet', group: 'development'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
+gem 'dragonfly', '~> 1.1.1'
 gem 'materialize-sass'
 gem 'material_icons'
+gem 'remotipart', '~> 1.2'
+
