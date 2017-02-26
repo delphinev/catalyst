@@ -1,0 +1,18 @@
+<h3>Find out the lastest posts</h3>
+
+<div class='row'>
+  <% @articles.each do |article| %>
+      <div class='col s12'>
+        <div class='card grey lighten-5 hoverable'>
+          <div class='card-content'>
+            <span class='card-title'><%= article.title %></span>
+            <p class='truncate'><%= article.content %></p>
+          </div>
+          <div class='card-action'>
+            <%= link_to "Author: #{article.user.username}", user_path(article.user) %>
+            <%= link_to "#{article.created_at.to_date}", article_path(article) %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

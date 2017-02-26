@@ -3,7 +3,7 @@
     <%= link_to 'Homepage', root_path, class: 'brand-logo right' %>
     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <li><%= link_to 'Dashboard', user_path(current_user) if current_user %></li>
-      <li><a href="#">Components</a></li>
+      <li><%= link_to 'Articles', articles_path %></li>
       <li><a href="#">JavaScript</a></li>
     </ul>
   </div>

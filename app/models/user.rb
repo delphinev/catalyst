@@ -9,4 +9,6 @@ class User < ApplicationRecord
   end
 
   validates :username, presence: true, uniqueness: true
+
+  has_many :articles
 end

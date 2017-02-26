@@ -6,15 +6,32 @@
           <i class="material-icons md-36 tooltipped" data-position="bottom" data-delay="50" data-tooltip="Upload picture">publish</i>
           <%= f.file_field :avatar, style: 'display: none', class: 'avatar-upload' %>
         <% end %>
-        <%= image_tag current_user.avatar.thumb('500x250#').url, class: 'avatar' %>
-        <span class="card-title"><%= current_user.username %></span>
+        <%= image_tag @user.avatar.thumb('500x250#').url, class: 'avatar' %>
+        <span class="card-title"><%= @user.username %></span>
       </div>
       <div class="card-content">
-        <p><%= current_user.biography %></p>
+        <p><%= @user.biography %></p>
       </div>
       <div class="card-action">
         <%= link_to 'Edit profile', edit_user_registration_path %>
+        <%= link_to 'Write something', new_article_path %>
       </div>
     </div>
+  </div>
+
+  <div class='col s12 m5'>
+    <ul class="collapsible" data-collapsible="accordion">
+      <% @user.articles.each do |article| %>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">library_books</i>
+            <%= article.title %> - <%= article.created_at.to_date%>
+          </div>
+          <div class="collapsible-body">
+            <span><%= article.content %></span><br>
+            <span><%= link_to 'Go to article', article_path(article) %></span>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </div>
